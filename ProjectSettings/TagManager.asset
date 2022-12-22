@@ -13,6 +13,7 @@ TagManager:
   - Enemy_Sight
   - Target
   - Safe
+  - weapon
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - Bullet
   - Body
   - EnemyBody
-  - 
+  - Flag
   - 
   - 
   - 
