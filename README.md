@@ -3,7 +3,7 @@
 オープンFPSは一人称視点のシューティングゲームです。
 
 環境を自由に調整し、自身のエイミング能力を測定してみましょう。
-
+![opengame](https://user-images.githubusercontent.com/63552585/223356913-8a2615c6-8a2a-4e1e-b6c2-c631f77c3d2f.png)
 
 ## Contents
 
