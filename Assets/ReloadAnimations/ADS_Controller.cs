@@ -30,12 +30,10 @@ public class ADS_Controller : MonoBehaviour
     void Update()
     {
         Debug.Log("sec" + sec);
-
             if ((Input.GetMouseButton(1) || Input.GetButton("Aim")))
         {
 
                 Animator.SetFloat("Speed", -1.0f);
-                //Animator.SetFloat("ADSSpeed", aDSSpeed);
                 Animator.SetBool("setup", true);
                 sec -= Time.deltaTime * (1 / aDSSpeed);
 

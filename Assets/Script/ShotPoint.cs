@@ -103,8 +103,6 @@ public class ShotPoint : MonoBehaviour
 
         Animator = GameObject.Find("GunManager").GetComponent<Animator>();
         //shotSpeed = PlayerController.bulletSpeed;
-        m_FieldOfView = PlayerController.FieldOfView;
-        KoshiTime = PlayerController.HipShotTime;
         audioSource = GetComponent<AudioSource>();
 
         if (this.transform.root.transform.tag == "Enemy")
@@ -125,7 +123,7 @@ public class ShotPoint : MonoBehaviour
         leavebullets = fullbullets;
     }
     // Update is called once per frame
-    private void FixedUpdate()
+    private void LateUpdate()
     {
         
     }
@@ -145,6 +143,18 @@ public class ShotPoint : MonoBehaviour
 
     public void ShotIntervalManager()
     {
+        if (gunholderIsEnemy == true)
+        {
+            if (CursorController.is999 == 2)
+            {
+                return;
+            }
+        }
+        else
+        {
+            
+        }
+
         if (GunChangeValueUpdater != null)
         {
             GunChangeValueUpdater.GetComponent<Animator>().SetBool("Reloading", false);
@@ -165,7 +175,7 @@ public class ShotPoint : MonoBehaviour
                 }
                 if(GunChangeValueUpdater == true)
                 {
-                    GunChangeValueUpdater.GetComponent<Animator>().Play("Recoil");
+                    GunChangeValueUpdater.GetComponent<Animator>().Play("Recoil", 0,0f);
                 }
                 Wave.shotCount += 1;
                 while (shotInterval < timeInterval)
@@ -196,10 +206,10 @@ public class ShotPoint : MonoBehaviour
             }
             else
             {
+                
                 if (gunholderIsEnemy == true)
                 {
                     EnemyAnimator.SetBool("ReadytoThrow", false);
-                    //EnemyAnimator.SetBool("Reloading", true);
                 }
                 else
                 {
@@ -212,15 +222,28 @@ public class ShotPoint : MonoBehaviour
 
     public void PhysicsFire()
     {
-        GameObject bullet = BulletObjectPool.GetObject(Bullet, burrel.transform.position, Quaternion.identity);
+        this.transform.LookAt(PlayerController.transform.position);
+        if(UnityEngine.Random.Range(0, 4) == 0)
+        {
+
+        }
+        else
+        {
+            this.transform.eulerAngles += new Vector3(0f, UnityEngine.Random.Range(-10f, 10f), 0f);
+        }
+        GameObject bullet = BulletObjectPool.GetObject(Bullet, this.transform.position, Quaternion.identity);
 
         if (bullet.GetComponent<PlayerAttack>() == true)
         {
             bullet.GetComponent<PlayerAttack>().thisParent = this.transform.root.gameObject;
         }
         Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
-        bulletRb.AddForce(transform.forward * shotSpeed);
-        Wave.shotmany++;
+        bulletRb.velocity = transform.forward * shotSpeed;
+        //bulletRb.AddForce(transform.forward * shotSpeed);
+        if (gunholderIsEnemy != true)
+        {
+            Wave.shotmany++;
+        }
     }
 
     public void RayFire()
@@ -236,6 +259,22 @@ public class ShotPoint : MonoBehaviour
             // オブジェクト作成
 
             GameObject BulletHole = BulletHoleObjectPool.GetObject(BulletHole_Prefab, pos, Quaternion.identity);
+
+            BulletHole.transform.SetParent(hit.transform, true);
+
+            var localScale = BulletHoleObjectPool.transform.localScale;
+            var parentLossyScale = hit.transform.lossyScale;
+
+            BulletHole.transform.localScale
+                = new Vector3(
+                    localScale.x / parentLossyScale.x * 0.01f,
+                    localScale.y / parentLossyScale.y * 0.01f,
+                    localScale.z / parentLossyScale.z * 0.01f);
+
+            //BulletHole.GetComponent<PositionConstraintAutoOff>().AddConstraint(hit.transform);
+
+            //BulletHole.GetComponent<PositionConstraintAutoOff>().
+
             //GameObject HitEffect = HitEffectObjectPool.GetObject(HitEffect_Prefab, pos, Quaternion.identity);
             BulletHole.GetComponentInChildren<ParticleSystem>().Play();
             BulletHole.GetComponentInChildren<InvokeParticle>().RecordParticle(BulletHole.GetComponentInChildren<ParticleSystem>());
@@ -274,32 +313,10 @@ public class ShotPoint : MonoBehaviour
 
     public void Fire()
     {
-        /*
-
-            audioSource.PlayOneShot(sound1);
-        if (gunholderIsEnemy == true && )
-        {
-                audioSource.PlayOneShot(sound1);
-                GameObject bullet = (GameObject)Instantiate(Bullet, burrel.transform.position, Quaternion.identity);
-
-                if (bullet.GetComponent<PlayerAttack>() == true)
-                {
-                    bullet.GetComponent<PlayerAttack>().thisParent = this.gameObject;
-                }
-                Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
-
-                bulletRb.AddForce(transform.forward * shotSpeed);
-                Destroy(bullet, 3.0f);
-                leavebullets -= 1;
-            
-        }
-        shotInterval += timeInterval;
-        muzzleFlashParticle.Play();
-        */
     }
 
     void Update()
     {
-
+        m_FieldOfView = PlayerController.FieldOfView;
     }
 }

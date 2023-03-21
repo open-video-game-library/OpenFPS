@@ -21,9 +21,9 @@ public class EnemyStatusController : MonoBehaviour
     public static int enemy_bulletMany;
     public static float enemy_ADS_Time = 1f;
     public static float enemy_Speed = 2f;
-    public static float enemy_Sight = 90f;
-    public static float enemy_search_Length = 15f;
-    public static float enemy_Shoot_Length = 15f;
+    public static float enemy_Sight = 360f;
+    public static float enemy_search_Length = 30f;
+    public static float enemy_Shoot_Length = 20f;
 
     public EnemyAI enemyAI;
     public EnemyAI_Sight[] enemyAI_Sight;

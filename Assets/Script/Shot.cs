@@ -135,9 +135,9 @@ public class Shot : MonoBehaviour
         {
             if (this.transform.root.GetComponent<Animator>() == true)
             {
-
                 if (animator.GetBool("Dash") == false)
                 {
+                    Debug.Log("ShotIntervalManager");
                     shotpoint.ShotIntervalManager();
                 }
             }

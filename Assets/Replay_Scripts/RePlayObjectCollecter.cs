@@ -21,6 +21,7 @@ public class RePlayObjectCollecter : MonoBehaviour
 
     [SerializeField] Text debugtext;
 
+    [SerializeField] Slider slider;
     private void Awake()
     {
         RePlayObjects = new RePlayObject[500];
@@ -38,6 +39,7 @@ public class RePlayObjectCollecter : MonoBehaviour
 
     private void LateUpdate()
     {
+        Debug.Log("once_Count" + once_Count);
         world_time += Time.deltaTime;
         if (once_Count != 0)
         {
@@ -90,6 +92,7 @@ public class RePlayObjectCollecter : MonoBehaviour
         }
 
         text.text = world_time.ToString();
+        slider.value = world_time;
     }
 
 
@@ -135,7 +138,6 @@ public class RePlayObjectCollecter : MonoBehaviour
             {
                     if (RePlayObjects[i].AnimatorRecorder != null)
                 {
-                    RePlayButtonUI.text = "StopRePlay";
                     RePlayObjects[i].AnimatorRecorder.PlayBack();
                 }
             }
@@ -147,7 +149,6 @@ public class RePlayObjectCollecter : MonoBehaviour
             {
                 if (RePlayObjects[i].AnimatorRecorder != null)
                 {
-                    RePlayButtonUI.text = "StartRePlay";
                     RePlayObjects[i].AnimatorRecorder.StopPlayBack();
                 }
             }
@@ -159,6 +160,10 @@ public class RePlayObjectCollecter : MonoBehaviour
             once_Count++;
             for (int i = 0; i < rePlayObjectCount; i++)
             {
+                //
+                RePlayObjects[i].transform.parent = null;
+                //
+
                 if (RePlayObjects[i].enabled == false)
                 {
                     RePlayObjects[i].gameObject.SetActive(true);
@@ -177,7 +182,6 @@ public class RePlayObjectCollecter : MonoBehaviour
                 }
                 if (RePlayObjects[i].AnimatorRecorder != null)
                 {
-                    RePlayButtonUI.text = "StopRePlay";
                     RePlayObjects[i].AnimatorRecorder.StopRecord();
                 }
             }
@@ -194,10 +198,133 @@ public class RePlayObjectCollecter : MonoBehaviour
             {
                 if (RePlayObjects[i].AnimatorRecorder != null)
                 {
-                    RePlayButtonUI.text = "StopRePlay";
                     RePlayObjects[i].AnimatorRecorder.PlayBack();
                 }
             }
+        }
+    }
+
+    int count;
+
+    public void StopAnimation()
+    {
+        world_time = slider.value;
+        if (Time.timeScale != 0)
+        {
+            if (once_Count > 0)
+            {
+                Time.timeScale = 0f;
+            }
+            for (int i = 0; i < rePlayObjectCount; i++)
+            {
+                if (RePlayObjects[i].AnimatorRecorder != null)
+                {
+                    RePlayObjects[i].AnimatorRecorder.StopPlayBack();
+                }
+            }
+            RePlayButtonUI.text = "Start";
+        }
+        else
+        {
+            Time.timeScale = 1f;
+            for (int i = 0; i < rePlayObjectCount; i++)
+            {
+                if (RePlayObjects[i].AnimatorRecorder != null)
+                {
+                    RePlayObjects[i].AnimatorRecorder.PlayBack();
+                }
+            }
+            RePlayButtonUI.text = "Stop";
+        }
+        count++;
+    }
+
+    public void SliderSetUp()
+    {
+        slider.maxValue = end_time;
+    }
+
+    [SerializeField] GameObject [] AppearItems;
+
+    [SerializeField] GameObject[] DisappearItems;
+    public void WatchTheRecording()
+    {
+        for (int i = 0; i < rePlayObjectCount; i++)
+        {
+            if (RePlayObjects[i].AnimatorRecorder != null)
+            {
+                RePlayObjects[i].AnimatorRecorder.StopPlayBack();
+            }
+        }
+        if (once_Count == 0)
+        {
+            end_time = world_time;
+            slider.maxValue = end_time;
+            once_Count++;
+            for (int i = 0; i < rePlayObjectCount; i++)
+            {
+                //
+                RePlayObjects[i].transform.parent = null;
+                //
+
+                if (RePlayObjects[i].enabled == false)
+                {
+                    RePlayObjects[i].gameObject.SetActive(true);
+                }
+
+                if (RePlayObjects[i].AnimatorRecorder != null)
+                {
+                    RePlayObjects[i].transform.parent = null;
+                    if (RePlayObjects[i].GetComponent<NavMeshAgent>() == true)
+                    {
+                        RePlayObjects[i].GetComponent<AICharacterControl>().enabled = false;
+                        RePlayObjects[i].GetComponent<ThirdPersonCharacter>().enabled = false;
+                        RePlayObjects[i].GetComponent<NavMeshAgent>().enabled = false;
+                    }
+
+                }
+                if (RePlayObjects[i].AnimatorRecorder != null)
+                {
+                    RePlayObjects[i].AnimatorRecorder.StopRecord();
+                }
+            }
+        }
+        world_time = 0f;
+        Time.timeScale = 1f;
+        for (int i = 0; i < rePlayObjectCount; i++)
+        {
+            if (RePlayObjects[i].AnimatorRecorder != null)
+            {
+                RePlayObjects[i].AnimatorRecorder.PlayBack();
+            }
+        }
+
+        foreach (GameObject a in AppearItems)
+        {
+            a.SetActive(false);
+        }
+
+        foreach (GameObject a in DisappearItems)
+        {
+            a.SetActive(true);
+        }
+    }
+
+    public void SliderValueChange()
+    {
+        world_time = slider.value;
+    }
+
+    public void FinishWatchRecord()
+    {
+        foreach (GameObject a in AppearItems)
+        {
+            a.SetActive(true);
+        }
+
+        foreach (GameObject a in DisappearItems)
+        {
+            a.SetActive(false);
         }
     }
 }

@@ -55,9 +55,12 @@ public class PickUpWeapon : MonoBehaviour
         foreach (GunChangeValueUpdater a in GunChangeValueUpdaters)
         {
             a.GetComponent<GunChangeValueUpdater>().DropDownWeapon();
+            a.GetComponent<Animator>().enabled = false;
         }
         shot.Latest_GunChangeValueUpdater = gun.GetComponent<GunChangeValueUpdater>();
         gun.transform.parent = shot.transform;
+        gun.GetComponentInChildren<Animator>().enabled = true;
+
         MeshRenderer[] meshrenderers = gun.GetComponentsInChildren<MeshRenderer>();
         foreach (MeshRenderer a in meshrenderers)
         {
@@ -69,7 +72,11 @@ public class PickUpWeapon : MonoBehaviour
             a.GetComponent<BoxCollider>().enabled = false;
             if (a.GetComponent<Rigidbody>() == true)
             {
-                a.GetComponent<Rigidbody>().isKinematic = true;
+                Destroy(a.GetComponent<Rigidbody>());
+            }
+            if (a.GetComponent<Animator>() == true)
+            {
+                a.GetComponent<Animator>().enabled = true;
             }
         }
         shot.PickUpGun();

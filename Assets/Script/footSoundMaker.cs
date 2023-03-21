@@ -8,11 +8,10 @@ public class footSoundMaker : MonoBehaviour
     public AudioClip audioclip2;
     public AudioClip audioclip3;
     public AudioClip audioclip4;
-    AudioSource audiosource;
+    [SerializeField] AudioSource audiosource;
     // Start is called before the first frame update
     void Start()
     {
-        audiosource = this.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame

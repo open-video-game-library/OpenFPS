@@ -44,13 +44,6 @@ public class GunChangeValueUpdater : MonoBehaviour
 
     public void GunIKUpdate()
     {
-        if(twoBoneIKRight.data.target != null)
-        {
-            twoBoneIKRight.data.target = rightHandObj;
-            twoBoneIKLeft.data.target = leftHandObj;
-            this.transform.root.GetComponent<RigBuilder>().Build();
-            isIK = true;
-        }
         PositionUpdate();
     }
 
@@ -63,12 +56,10 @@ public class GunChangeValueUpdater : MonoBehaviour
 
     public void DropDownWeapon()
     {
-        
         this.transform.parent = null;
         Debug.Log("Drop : " + this.transform.root.name);
         RaycastHit hit;
         int layerMask = 1 << 0;
-
         MeshRenderer[] meshrenderers = this.GetComponentsInChildren<MeshRenderer>();
         foreach (MeshRenderer a in meshrenderers)
         {
@@ -78,18 +69,8 @@ public class GunChangeValueUpdater : MonoBehaviour
         foreach (BoxCollider b in a_colliders)
         {
             b.enabled = true;
-            if (b.GetComponent<Rigidbody>())
-            {
-                b.GetComponent<Rigidbody>().isKinematic = false;
-            }
+            Rigidbody rigidbody = gameObject.AddComponent<Rigidbody>();
         }
-        /*
-        if (Physics.Raycast(a.transform.position, -new Vector3(0, -10f, 0), out hit, Mathf.Infinity, layerMask))
-        {
-            Debug.DrawRay(a.transform.position, -new Vector3(0, -10f, 0), new Color(1f, 1f, 1f, 1f));
-            this.transform.position = hit.transform.position;
-        }
-        */
     }
     
 }

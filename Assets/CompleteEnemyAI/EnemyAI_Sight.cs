@@ -153,6 +153,23 @@ public class EnemyAI_Sight : MonoBehaviour
 
     void Update()
     {
+        if (CursorController.is999 == 2)
+        {
+            return;
+        }
+        else
+        {
+            float speed = 1.25f;
+            // ターゲット方向のベクトルを取得
+            Vector3 relativePos = Player_Transform.transform.position - this.transform.root.transform.position;
+            // 方向を、回転情報に変換
+            Quaternion rotation = Quaternion.LookRotation(relativePos);
+            // 現在の回転情報と、ターゲット方向の回転情報を補完する
+            transform.root.transform.rotation = Quaternion.Slerp(this.transform.rotation, rotation, speed);
+            transform.root.transform.eulerAngles = new Vector3(0f, transform.root.transform.eulerAngles.y, 0f);
+            //
+        }
+
         if (this.transform.root.GetComponent<NavMeshAgent>() == false)
         {
             handIK.ikActive = false;
@@ -202,7 +219,8 @@ public class EnemyAI_Sight : MonoBehaviour
         }
         Ray ray = new Ray(transform.parent.position, direction);
         LayerMask layerMask = 1 << 0 | 1 << 7; //Only default and Player Object
-        
+
+        layerMask = 1 << 7;
 
         if (reloading == true) //When Already Find and in Range
         {

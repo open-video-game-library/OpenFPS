@@ -71,16 +71,32 @@ public class CursorController : MonoBehaviour
 
     public void GoPlayField()
     {
-        if (Wave.shootingRange == false)
+        if(is999 == 0)
         {
-            SceneManager.LoadScene("AllInOneScene");
             is999 = 1;
+            Wave.shootingRange = false;
         }
         else
         {
-            SceneManager.LoadScene("AllInOneScene");
-            is999 = 2;
+            if (is999 == 1)
+            {
+                is999 = 1;
+                Wave.shootingRange = false;
+            }
+            else
+            {
+                is999 = 2;
+                Wave.shootingRange = true;
+            }
         }
+        SceneManager.LoadScene("AllInOneScene");
+    }
+
+    public void GoShootingRange()
+    {
+        is999 = 2;
+        Wave.shootingRange = true;
+        SceneManager.LoadScene("AllInOneScene");
     }
 
     public void GoBackHome()
@@ -337,14 +353,6 @@ public class CursorController : MonoBehaviour
     public void Stage_Range_LeftTime(string text)
     {
         stage_Range_LeftTime = int.Parse(text);
-    }
-
-    
-
-    public void JumpHeight(string text)
-    {
-        PlayerController.jumpHeight = float.Parse(text);
-
     }
 
     public void OnValueChange()

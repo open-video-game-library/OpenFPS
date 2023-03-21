@@ -17,7 +17,7 @@ public class AnimatorRecorder : MonoBehaviour
     public float startRecording_time;
     void Start()
     {
-        recorderAnimator.SetFloat("Speed", 1f);
+        //recorderAnimator.SetFloat("Speed", 1f);
     }
 
     public void StartRecord(float time)
@@ -58,7 +58,7 @@ public class AnimatorRecorder : MonoBehaviour
         }
         if (animator && recorderAnimator && !isPlayBack)
         {
-            //animator.Rebind();
+            animator.Rebind();
             //recorderAnimator.Rebind();
             animator.StartPlayback();
             recorderAnimator.StartPlayback();

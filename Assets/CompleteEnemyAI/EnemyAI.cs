@@ -63,12 +63,14 @@ public class EnemyAI : MonoBehaviour
 
     void PickUp() //this is called when enemy reload animation completed;
     {
-
-        shotPoint.Reloadcomplete();
+        if(shotPoint != null)
+        {
+            shotPoint.Reloadcomplete();
+        }
         if (EnemyAI_Sight != null)
         {
             Debug.Log("moveable");
-                EnemyAI_Sight.moveable();
+            EnemyAI_Sight.moveable();
         }
     }
 

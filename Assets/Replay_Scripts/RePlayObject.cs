@@ -69,9 +69,13 @@ public class RePlayObject : MonoBehaviour
     {
         if (AnimatorRecorder == true)
         {
-            
+            this.transform.rotation = new Quaternion(Quaternion_x.Evaluate(time), Quaternion_y.Evaluate(time), Quaternion_z.Evaluate(time), Quaternion_w.Evaluate(time));
+            this.transform.position = new Vector3(Position_x.Evaluate(time), Position_y.Evaluate(time), Position_z.Evaluate(time));
         }
-        this.transform.rotation = new Quaternion(Quaternion_x.Evaluate(time), Quaternion_y.Evaluate(time), Quaternion_z.Evaluate(time), Quaternion_w.Evaluate(time));
-        this.transform.position = new Vector3(Position_x.Evaluate(time), Position_y.Evaluate(time), Position_z.Evaluate(time));
+        else
+        {
+            this.transform.rotation = new Quaternion(Quaternion_x.Evaluate(time), Quaternion_y.Evaluate(time), Quaternion_z.Evaluate(time), Quaternion_w.Evaluate(time));
+            this.transform.position = new Vector3(Position_x.Evaluate(time), Position_y.Evaluate(time), Position_z.Evaluate(time));
+        }
     }
 }

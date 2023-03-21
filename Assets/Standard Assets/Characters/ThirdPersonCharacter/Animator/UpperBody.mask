@@ -1,0 +1,121 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UpperBody
+  m_Mask: 01000000010000000100000000000000000000000100000001000000010000000100000000000000000000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: SOTA_Mesh
+    m_Weight: 1
+  - m_Path: SOTA_Root
+    m_Weight: 0
+  - m_Path: SOTA_Root/SOTA_Hips
+    m_Weight: 1
+  - m_Path: SOTA_Root/SOTA_Hips/SOTA_LeftUpLeg
+    m_Weight: 0
+  - m_Path: SOTA_Root/SOTA_Hips/SOTA_LeftUpLeg/SOTA_LeftLeg
+    m_Weight: 1
+  - m_Path: SOTA_Root/SOTA_Hips/SOTA_LeftUpLeg/SOTA_LeftLeg/SOTA_LeftFoot
+    m_Weight: 1
+  - m_Path: SOTA_Root/SOTA_Hips/SOTA_LeftUpLeg/SOTA_LeftLeg/SOTA_LeftFoot/SOTA_LeftToeBase
+    m_Weight: 1
+  - m_Path: SOTA_Root/SOTA_Hips/SOTA_RightUpLeg
+    m_Weight: 0
+  - m_Path: SOTA_Root/SOTA_Hips/SOTA_RightUpLeg/SOTA_RightLeg
+    m_Weight: 1
+  - m_Path: SOTA_Root/SOTA_Hips/SOTA_RightUpLeg/SOTA_RightLeg/SOTA_RightFoot
+    m_Weight: 1
+  - m_Path: SOTA_Root/SOTA_Hips/SOTA_RightUpLeg/SOTA_RightLeg/SOTA_RightFoot/SOTA_RightToeBase
+    m_Weight: 1
+  - m_Path: SOTA_Root/SOTA_Hips/SOTA_Spine
+    m_Weight: 1
+  - m_Path: SOTA_Root/SOTA_Hips/SOTA_Spine/SOTA_Spine1
+    m_Weight: 1
+  - m_Path: SOTA_Root/SOTA_Hips/SOTA_Spine/SOTA_Spine1/SOTA_Spine2
+    m_Weight: 1
+  - m_Path: SOTA_Root/SOTA_Hips/SOTA_Spine/SOTA_Spine1/SOTA_Spine2/SOTA_LeftShoulder
+    m_Weight: 1
+  - m_Path: SOTA_Root/SOTA_Hips/SOTA_Spine/SOTA_Spine1/SOTA_Spine2/SOTA_LeftShoulder/SOTA_LeftArm
+    m_Weight: 1
+  - m_Path: SOTA_Root/SOTA_Hips/SOTA_Spine/SOTA_Spine1/SOTA_Spine2/SOTA_LeftShoulder/SOTA_LeftArm/SOTA_LeftForeArm
+    m_Weight: 1
+  - m_Path: SOTA_Root/SOTA_Hips/SOTA_Spine/SOTA_Spine1/SOTA_Spine2/SOTA_LeftShoulder/SOTA_LeftArm/SOTA_LeftForeArm/SOTA_LeftHand
+    m_Weight: 1
+  - m_Path: SOTA_Root/SOTA_Hips/SOTA_Spine/SOTA_Spine1/SOTA_Spine2/SOTA_LeftShoulder/SOTA_LeftArm/SOTA_LeftForeArm/SOTA_LeftHand/SOTA_LeftHandIndex1
+    m_Weight: 1
+  - m_Path: SOTA_Root/SOTA_Hips/SOTA_Spine/SOTA_Spine1/SOTA_Spine2/SOTA_LeftShoulder/SOTA_LeftArm/SOTA_LeftForeArm/SOTA_LeftHand/SOTA_LeftHandIndex1/SOTA_LeftHandIndex2
+    m_Weight: 1
+  - m_Path: SOTA_Root/SOTA_Hips/SOTA_Spine/SOTA_Spine1/SOTA_Spine2/SOTA_LeftShoulder/SOTA_LeftArm/SOTA_LeftForeArm/SOTA_LeftHand/SOTA_LeftHandIndex1/SOTA_LeftHandIndex2/SOTA_LeftHandIndex3
+    m_Weight: 1
+  - m_Path: SOTA_Root/SOTA_Hips/SOTA_Spine/SOTA_Spine1/SOTA_Spine2/SOTA_LeftShoulder/SOTA_LeftArm/SOTA_LeftForeArm/SOTA_LeftHand/SOTA_LeftHandMiddle1
+    m_Weight: 1
+  - m_Path: SOTA_Root/SOTA_Hips/SOTA_Spine/SOTA_Spine1/SOTA_Spine2/SOTA_LeftShoulder/SOTA_LeftArm/SOTA_LeftForeArm/SOTA_LeftHand/SOTA_LeftHandMiddle1/SOTA_LeftHandMiddle2
+    m_Weight: 1
+  - m_Path: SOTA_Root/SOTA_Hips/SOTA_Spine/SOTA_Spine1/SOTA_Spine2/SOTA_LeftShoulder/SOTA_LeftArm/SOTA_LeftForeArm/SOTA_LeftHand/SOTA_LeftHandMiddle1/SOTA_LeftHandMiddle2/SOTA_LeftHandMiddle3
+    m_Weight: 1
+  - m_Path: SOTA_Root/SOTA_Hips/SOTA_Spine/SOTA_Spine1/SOTA_Spine2/SOTA_LeftShoulder/SOTA_LeftArm/SOTA_LeftForeArm/SOTA_LeftHand/SOTA_LeftHandPinky1
+    m_Weight: 1
+  - m_Path: SOTA_Root/SOTA_Hips/SOTA_Spine/SOTA_Spine1/SOTA_Spine2/SOTA_LeftShoulder/SOTA_LeftArm/SOTA_LeftForeArm/SOTA_LeftHand/SOTA_LeftHandPinky1/SOTA_LeftHandPinky2
+    m_Weight: 1
+  - m_Path: SOTA_Root/SOTA_Hips/SOTA_Spine/SOTA_Spine1/SOTA_Spine2/SOTA_LeftShoulder/SOTA_LeftArm/SOTA_LeftForeArm/SOTA_LeftHand/SOTA_LeftHandPinky1/SOTA_LeftHandPinky2/SOTA_LeftHandPinky3
+    m_Weight: 1
+  - m_Path: SOTA_Root/SOTA_Hips/SOTA_Spine/SOTA_Spine1/SOTA_Spine2/SOTA_LeftShoulder/SOTA_LeftArm/SOTA_LeftForeArm/SOTA_LeftHand/SOTA_LeftHandRing1
+    m_Weight: 1
+  - m_Path: SOTA_Root/SOTA_Hips/SOTA_Spine/SOTA_Spine1/SOTA_Spine2/SOTA_LeftShoulder/SOTA_LeftArm/SOTA_LeftForeArm/SOTA_LeftHand/SOTA_LeftHandRing1/SOTA_LeftHandRing2
+    m_Weight: 1
+  - m_Path: SOTA_Root/SOTA_Hips/SOTA_Spine/SOTA_Spine1/SOTA_Spine2/SOTA_LeftShoulder/SOTA_LeftArm/SOTA_LeftForeArm/SOTA_LeftHand/SOTA_LeftHandRing1/SOTA_LeftHandRing2/SOTA_LeftHandRing3
+    m_Weight: 1
+  - m_Path: SOTA_Root/SOTA_Hips/SOTA_Spine/SOTA_Spine1/SOTA_Spine2/SOTA_LeftShoulder/SOTA_LeftArm/SOTA_LeftForeArm/SOTA_LeftHand/SOTA_LeftHandThumb1
+    m_Weight: 1
+  - m_Path: SOTA_Root/SOTA_Hips/SOTA_Spine/SOTA_Spine1/SOTA_Spine2/SOTA_LeftShoulder/SOTA_LeftArm/SOTA_LeftForeArm/SOTA_LeftHand/SOTA_LeftHandThumb1/SOTA_LeftHandThumb2
+    m_Weight: 1
+  - m_Path: SOTA_Root/SOTA_Hips/SOTA_Spine/SOTA_Spine1/SOTA_Spine2/SOTA_LeftShoulder/SOTA_LeftArm/SOTA_LeftForeArm/SOTA_LeftHand/SOTA_LeftHandThumb1/SOTA_LeftHandThumb2/SOTA_LeftHandThumb3
+    m_Weight: 1
+  - m_Path: SOTA_Root/SOTA_Hips/SOTA_Spine/SOTA_Spine1/SOTA_Spine2/SOTA_Neck
+    m_Weight: 1
+  - m_Path: SOTA_Root/SOTA_Hips/SOTA_Spine/SOTA_Spine1/SOTA_Spine2/SOTA_Neck/SOTA_Head
+    m_Weight: 1
+  - m_Path: SOTA_Root/SOTA_Hips/SOTA_Spine/SOTA_Spine1/SOTA_Spine2/SOTA_RightShoulder
+    m_Weight: 1
+  - m_Path: SOTA_Root/SOTA_Hips/SOTA_Spine/SOTA_Spine1/SOTA_Spine2/SOTA_RightShoulder/SOTA_RightArm
+    m_Weight: 1
+  - m_Path: SOTA_Root/SOTA_Hips/SOTA_Spine/SOTA_Spine1/SOTA_Spine2/SOTA_RightShoulder/SOTA_RightArm/SOTA_RightForeArm
+    m_Weight: 1
+  - m_Path: SOTA_Root/SOTA_Hips/SOTA_Spine/SOTA_Spine1/SOTA_Spine2/SOTA_RightShoulder/SOTA_RightArm/SOTA_RightForeArm/SOTA_RightHand
+    m_Weight: 1
+  - m_Path: SOTA_Root/SOTA_Hips/SOTA_Spine/SOTA_Spine1/SOTA_Spine2/SOTA_RightShoulder/SOTA_RightArm/SOTA_RightForeArm/SOTA_RightHand/SOTA_RightHandIndex1
+    m_Weight: 1
+  - m_Path: SOTA_Root/SOTA_Hips/SOTA_Spine/SOTA_Spine1/SOTA_Spine2/SOTA_RightShoulder/SOTA_RightArm/SOTA_RightForeArm/SOTA_RightHand/SOTA_RightHandIndex1/SOTA_RightHandIndex2
+    m_Weight: 1
+  - m_Path: SOTA_Root/SOTA_Hips/SOTA_Spine/SOTA_Spine1/SOTA_Spine2/SOTA_RightShoulder/SOTA_RightArm/SOTA_RightForeArm/SOTA_RightHand/SOTA_RightHandIndex1/SOTA_RightHandIndex2/SOTA_RightHandIndex3
+    m_Weight: 1
+  - m_Path: SOTA_Root/SOTA_Hips/SOTA_Spine/SOTA_Spine1/SOTA_Spine2/SOTA_RightShoulder/SOTA_RightArm/SOTA_RightForeArm/SOTA_RightHand/SOTA_RightHandMiddle1
+    m_Weight: 1
+  - m_Path: SOTA_Root/SOTA_Hips/SOTA_Spine/SOTA_Spine1/SOTA_Spine2/SOTA_RightShoulder/SOTA_RightArm/SOTA_RightForeArm/SOTA_RightHand/SOTA_RightHandMiddle1/SOTA_RightHandMiddle2
+    m_Weight: 1
+  - m_Path: SOTA_Root/SOTA_Hips/SOTA_Spine/SOTA_Spine1/SOTA_Spine2/SOTA_RightShoulder/SOTA_RightArm/SOTA_RightForeArm/SOTA_RightHand/SOTA_RightHandMiddle1/SOTA_RightHandMiddle2/SOTA_RightHandMiddle3
+    m_Weight: 1
+  - m_Path: SOTA_Root/SOTA_Hips/SOTA_Spine/SOTA_Spine1/SOTA_Spine2/SOTA_RightShoulder/SOTA_RightArm/SOTA_RightForeArm/SOTA_RightHand/SOTA_RightHandPinky1
+    m_Weight: 1
+  - m_Path: SOTA_Root/SOTA_Hips/SOTA_Spine/SOTA_Spine1/SOTA_Spine2/SOTA_RightShoulder/SOTA_RightArm/SOTA_RightForeArm/SOTA_RightHand/SOTA_RightHandPinky1/SOTA_RightHandPinky2
+    m_Weight: 1
+  - m_Path: SOTA_Root/SOTA_Hips/SOTA_Spine/SOTA_Spine1/SOTA_Spine2/SOTA_RightShoulder/SOTA_RightArm/SOTA_RightForeArm/SOTA_RightHand/SOTA_RightHandPinky1/SOTA_RightHandPinky2/SOTA_RightHandPinky3
+    m_Weight: 1
+  - m_Path: SOTA_Root/SOTA_Hips/SOTA_Spine/SOTA_Spine1/SOTA_Spine2/SOTA_RightShoulder/SOTA_RightArm/SOTA_RightForeArm/SOTA_RightHand/SOTA_RightHandRing1
+    m_Weight: 1
+  - m_Path: SOTA_Root/SOTA_Hips/SOTA_Spine/SOTA_Spine1/SOTA_Spine2/SOTA_RightShoulder/SOTA_RightArm/SOTA_RightForeArm/SOTA_RightHand/SOTA_RightHandRing1/SOTA_RightHandRing2
+    m_Weight: 1
+  - m_Path: SOTA_Root/SOTA_Hips/SOTA_Spine/SOTA_Spine1/SOTA_Spine2/SOTA_RightShoulder/SOTA_RightArm/SOTA_RightForeArm/SOTA_RightHand/SOTA_RightHandRing1/SOTA_RightHandRing2/SOTA_RightHandRing3
+    m_Weight: 1
+  - m_Path: SOTA_Root/SOTA_Hips/SOTA_Spine/SOTA_Spine1/SOTA_Spine2/SOTA_RightShoulder/SOTA_RightArm/SOTA_RightForeArm/SOTA_RightHand/SOTA_RightHandThumb1
+    m_Weight: 1
+  - m_Path: SOTA_Root/SOTA_Hips/SOTA_Spine/SOTA_Spine1/SOTA_Spine2/SOTA_RightShoulder/SOTA_RightArm/SOTA_RightForeArm/SOTA_RightHand/SOTA_RightHandThumb1/SOTA_RightHandThumb2
+    m_Weight: 1
+  - m_Path: SOTA_Root/SOTA_Hips/SOTA_Spine/SOTA_Spine1/SOTA_Spine2/SOTA_RightShoulder/SOTA_RightArm/SOTA_RightForeArm/SOTA_RightHand/SOTA_RightHandThumb1/SOTA_RightHandThumb2/SOTA_RightHandThumb3
+    m_Weight: 1

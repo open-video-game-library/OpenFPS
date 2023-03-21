@@ -35,7 +35,12 @@ public class PlayerAttack : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-            Vector3 hitPos;
+        Debug.Log("other.transform.name" + other.transform.name);
+        if (other.gameObject.tag != "Enemy" && other.gameObject.tag != "Player")
+        {
+            this.gameObject.SetActive(false);
+        }
+        Vector3 hitPos;
 
             foreach (ContactPoint point in other.contacts)
             {
@@ -75,22 +80,67 @@ public class PlayerAttack : MonoBehaviour
                         }
                         Wave.hitCount += 1;
                         float dist = Vector3.Distance(this.transform.position, thisParent.transform.position);
-                        break;
+                    this.gameObject.SetActive(false);
+                    break;
                     }
                 }
                 else if(other.gameObject.tag == "Player" && thisParent.transform.tag == "Enemy")
                 {
                     PlayerController.hp -= 1;
-                    break;
+                this.gameObject.SetActive(false);
+                break;
                 }
                 
             }
-
-        this.gameObject.SetActive(false);
     }
 
-        void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
+
+            Vector3 hitPos;
+            hitPos = this.transform.position;
+            Quaternion rot = Quaternion.FromToRotation(-1 * prefab.transform.forward, this.transform.position);
+            Vector3 pos = hitPos + (this.transform.position * 0.01f);
+            GameObject dankon = Instantiate(prefab, pos, rot);
+            Destroy(dankon);
+            GameObject particle = Instantiate(Hiteffect, pos, rot);
+            particle.GetComponent<ParticleSystem>().Play();
+            Destroy(particle, 1f); // 1f後にパーティクルは消滅します
+
+            if (other.gameObject.tag == "Enemy" && thisParent.transform.tag == "Player")
+            {
+                Wave.hitmany++;
+                if (other.transform.root.GetComponent<EnemyAI>() != null)
+                {
+                    GameObject a = Instantiate(damage, new Vector3(pos.x, pos.y + 1f, pos.z), Quaternion.identity, WorldCanvas);
+                    a.GetComponent<Text>().text = " ";
+                    if (other.transform.root.GetComponent<EnemyAI>().HP > 0)
+                    {
+
+                        if (other.transform.name.Contains("Head"))
+                        {
+                            other.transform.root.GetComponent<EnemyAI>().GetDamage(5);
+                            Wave.Score += 50;
+                            a.GetComponent<Text>().text = "+50";
+                            a.GetComponent<Text>().color = new Color(1f, 0f, 0f, 1f);
+                        }
+                        else
+                        {
+                            other.transform.root.GetComponent<EnemyAI>().GetDamage(1);
+                            Wave.Score += 10;
+                            a.GetComponent<Text>().text = "+10";
+                        }
+                    }
+                    Wave.hitCount += 1;
+                    float dist = Vector3.Distance(this.transform.position, thisParent.transform.position);
+                }
+            }
+            else if (other.gameObject.tag == "Player" && thisParent.transform.tag == "Enemy")
+            {
+                PlayerController.hp -= 1;
+            }
+
+        this.gameObject.SetActive(false);
 
     }
 }

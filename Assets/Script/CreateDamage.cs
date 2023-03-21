@@ -12,11 +12,12 @@ public class CreateDamage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Player = GameObject.Find("PlayerCamera").transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        this.transform.LookAt(Player.transform.position);
     }
 }

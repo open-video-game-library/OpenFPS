@@ -14,12 +14,12 @@ public class UITransformChanger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        GetComponent<RectTransform>().anchoredPosition = new Vector3(172, GetComponent<RectTransform>().anchoredPosition.y, 0);
     }
 
     void UIMount()
     {
-        GetComponent<RectTransform>().anchoredPosition = new Vector3(160f, 0f, 0);
+        GetComponent<RectTransform>().anchoredPosition = new Vector3(172, 0f, 0);
     }
 
     

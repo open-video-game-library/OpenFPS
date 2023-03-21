@@ -90,7 +90,7 @@ public class Wave : MonoBehaviour
                 for (int j = 0; j < SponeEnemyMany; j++)
                 {
                     GameObject target = Instantiate
-                        (Prefab_Target, new Vector3(15f, 0f, -15f), Quaternion.Euler(0, 0, 0));
+                        (Prefab_Target, new Vector3(15f, 0f, -15f), Quaternion.Euler(0, 180f, 0));
                     if(target.GetComponent<NavMeshAgent>() == true)
                     {
                         target.GetComponent<NavMeshAgent>().enabled = false;
@@ -171,12 +171,15 @@ public class Wave : MonoBehaviour
         scoreText.text = Score.ToString();
         if((PlayerController.hp <= 0 || end == true) && once == false)
         {
+            
             Time.timeScale = 0;
             RecordStatus();
             for (int i = 0; i < Wave_number; i++)
             {
-                if (dataManager != null)
+                if (dataManager != null && now_Wave_number >= 0)
                 {
+                    Debug.Log("PlayerController.hp <= 0" + PlayerController.hp);
+                    Debug.Log("now_Wave_number" + now_Wave_number);
                     dataManager.postData(Score, i, hitRate[i], EnemyLeave[i], Wave_number_EnemyCount[now_Wave_number]);
                 }
             }
@@ -369,7 +372,7 @@ public class Wave : MonoBehaviour
             for (int i = 0; i < Wave_number; i++)
             {
                 ScoreBox.text += (i).ToString() + "\n";
-                RoundBox.text += hitRate[i].ToString() + "\n";
+                RoundBox.text += hitRate[i].ToString("N2") + "\n";
                 killBox.text += EnemyLeave[i] + "\n";
             }
 

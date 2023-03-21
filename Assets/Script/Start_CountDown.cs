@@ -11,8 +11,6 @@ public class Start_CountDown : MonoBehaviour
 
     public float countDown_Value;
     public Wave wave;
-
-    private float remember_PlayerSpeed;
     float value;
     // Start is called before the first frame update
     void Start()
@@ -36,13 +34,12 @@ public class Start_CountDown : MonoBehaviour
         if (value <= 0 && canvas.enabled == true)
         {
             rb.constraints = RigidbodyConstraints.FreezeRotation;
-            PlayerController.speed = remember_PlayerSpeed;
             wave.WaveUpdate();
             canvas.enabled = false;
         }
         else if (value > 0 && canvas.enabled == true)
         {
-            
+
         }
     }
 }
