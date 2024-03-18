@@ -1,72 +1,71 @@
 # OpenFPS
 
-オープンFPSは一人称視点のシューティングゲームです。
+[日本語版README](https://github.com/open-video-game-library/OpenFPS/blob/main/README.JP.md)
 
-環境を自由に調整し、自身のエイミング能力を測定してみましょう。
+Open FPS is a first-person shooter.
+
+Adjust the environment at will and measure your own aiming ability.
+
 ![opengame](https://user-images.githubusercontent.com/63552585/223356913-8a2615c6-8a2a-4e1e-b6c2-c631f77c3d2f.png)
 
 ## Contents
 
-ゲーム開始前のステータス変更画面では、プレイヤーのカメラ感度や視野角などの基礎的なパラメータの他、実験環境の設定ができます。
+The status change screen before the game begins allows the player to set the experimental environment as well as basic parameters such as camera sensitivity and viewing angle.
 
-### ルール
+### Rule
 
-ゲームオーバー条件
-- プレイヤーの体力が0になる
+Game Over Conditions
+- Player's health reaches 0
 
-タスク
-- ターゲットに画面の中心を合わせ射撃する
+Task
+- Center the screen on the target and fire.
 
-### 操作方法
+### How to operate
 
-・キーボード操作
-WASD →移動
-LShift → ダッシュ
-Space → ジャンプ
-右クリック → エイミング
-左クリック → 射撃
-Rボタン → リロード
+Keyboard Operation
+- WASD → Move
+- LShift → Dash
+- Space → Jump
+- Right click → Aiming
+- Left click → Fire
+- R button → Reload
 
-・コントローラー操作
-左スティック →移動
-Xボタン → ダッシュ
-Aボタン → ジャンプ
-Lスティック → エイミング
-Rスティック → 射撃
-Bボタン → リロード
+Controller Controls
+- Left stick → Move
+- X button → Dash
+- A button → Jump
+- L stick → Aiming
+- R stick → Fire
+- B button → Reload
 
 ## Features
 
-パラメータ調整機能
+Parameter Adjustment Function
 
-- カメラ感度
-- エイムング時のカメラ感度
-- 視野角
+- Camera Sensitivity
+- Camera Sensitivity during Aiming
+- Viewing Angle
 
-(アクションフィールドのみ)
-- 敵キャラクターの視野角
-- 敵キャラクターの視認可能距離
+(Action field only)
+- Viewing angle of enemy characters
+- Visible distance of enemy characters
 
-(シューティングレンジのみ)
-- ターゲットが追加される回数
-- ターゲットが追加される数
+(Shooting range only)
+- Number of times a target is added
+- Number of targets added
 
-パラメータ出力機能
+Parameter Output Functions
 
-- 命中率
-- キル数
+- Hit rate
+- Number of kills
 
-### 研究利用例
+### Research Applications
 
-ゲーム体験の主観評価法の提案研究
-- FPS体験に適している。
+Proposed study of a subjective evaluation method for game experience
+- Suitable for FPS experience.
 
-コントローラデバイスの提案研究
-- 二次元の入力を必要とするプレイヤーの視点を継続的に変更しなければならない特性から、アナログ入力が可能な複雑な操作を必要とするコントローラーデバイスの評価に適している。
-
-### 研究利用例
-
--
+Proposed research on controller devices
+- The characteristics of the player's viewpoint, which must be continuously changed, requiring two-dimensional input, make it suitable for evaluation of controller devices that require complex operations that can be analog input.
 
 ## Requirement
 
@@ -82,44 +81,12 @@ Unity2020.3.14f1
 
 ## Licence
 
-1. OpenFPSは無料でご利用できます。
+This content is licensed under the [MIT License](https://github.com/open-video-game-library/OpenFPS/blob/main/LICENSE.md). 
 
-2. 営利目的・公序良俗に反する目的でない限り、研究目的での利用を含め、あらゆる用途で利用できます。
+## Use in Research
 
-3. ダウンロードしたデータを改変し、ご利用いただいても構いません。
-
-4. 利用報告をする必要はありませんが、改変したデータを二次配布する場合を含め、OpenFPSを利用した場合は、その旨を明記して下さい。
-
-5. ゲーム名 を研究で利用する場合は、ご自身の論文内で以下の論文を引用して下さい。
-
-- [研究利用しやすく標準性を目指したビデオゲームの設計と開発](http://id.nii.ac.jp/1001/00212465/)
-```
-@inproceedings{weko_212571_1,
-   author	 = "拓也,岡 and 拓也,川島 and 大智,林 and 恵太,渡邊",
-   title	 = "研究利用しやすく標準性を目指したビデオゲームの設計と開発",
-   booktitle	 = "エンタテインメントコンピューティングシンポジウム論文集",
-   year 	 = "2021",
-   volume	 = "2021",
-   number	 = "",
-   pages	 = "181--186",
-   month	 = "aug"
-}
-```
-```
-BiBTeX
-```
-
-## Note
-
-- OpenFPSからダウンロードしたものを、自身が開発したものと偽って公開する行為はご遠慮下さい。
-
-- OpenFPSを利用したことによるトラブル/損害が発生した場合、一切の責任を負いません。
-
-- OpenFPSのコンテンツや利用規約は、予告なしに変更される場合があります。
-
-- OpenFPSではゲーム内のパラメータを変更できますが、研究の公平性や再現性を保つために、設定したパラメータの値を明示するようにしてください。
+[Recommendations for research use of this content](https://github.com/open-video-game-library/OpenFPS/blob/main/RESEARCH_USE.md)
 
 ## Contact
 
-意見や要望、質問などがありましたら、[こちら](https://openvideogame.cc/contact)からお問い合わせ下さい。
-
+If you have any comments, requests or questions, please contact us [here](https://openvideogame.cc/contact).
